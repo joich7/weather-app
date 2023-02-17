@@ -79,22 +79,22 @@ function weather() {
 
     make(/*Id:*/"cityCont",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"container m-3",/*Inner Txt:*/"")
       make(/*Id:*/"cityRow1", /*Parent Id:*/"cityCont",/*Type:*/ "div",/*class:*/"row text-center", "")
-        make(/*Id:*/"cityName", /*Parent Id:*/"cityRow1", /*Type:*/"div",/*class:*/"col-12  p-4 bg-success","City:")
-        make(/*Id:*/"cityNameContent",/*Parent Id:*/"cityRow1",/*Type:*/"div",/*class:*/"col-12 p-4 bg-danger",/*Inner Txt:*/state.city.name)
+        make(/*Id:*/"cityName", /*Parent Id:*/"cityRow1", /*Type:*/"div",/*class:*/"col-12  p-4 bg-info","City:")
+        make(/*Id:*/"cityNameContent",/*Parent Id:*/"cityRow1",/*Type:*/"div",/*class:*/"col-12 p-4 bg-dark",/*Inner Txt:*/state.city.name)
 
     make(/*Id:*/"tempCont",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"container text-center m-3",/*Inner Txt:*/"");
-      make(/*Id:*/"tempHeader",/*Parent Id:*/"tempCont",/*Type:*/"div",/*class:*/"row text-center bg-success",/*Inner Txt:*/"");
+      make(/*Id:*/"tempHeader",/*Parent Id:*/"tempCont",/*Type:*/"div",/*class:*/"row text-center bg-info",/*Inner Txt:*/"");
         make(/*Id:*/"tempText",/*Parent Id:*/"tempHeader",/*Type:*/"div",/*class:*/"col-12 p-4",/*Inner Txt:*/"Temperature");
      
-      make(/*Id:*/"tempRow",/*Parent Id:*/"tempCont",/*Type:*/"div",/*class:*/"row p-5 bg-danger",/*Inner Txt:*/"");
+      make(/*Id:*/"tempRow",/*Parent Id:*/"tempCont",/*Type:*/"div",/*class:*/"row p-5 bg-dark",/*Inner Txt:*/"");
         make(/*Id:*/"tempKValue",/*Parent Id:*/"tempRow",/*Type:*/"div",/*class:*/"col-4",/*Inner Txt:*/Math.round(tempK)+" K");
         make(/*Id:*/"tempFValue",/*Parent Id:*/"tempRow",/*Type:*/"div",/*class:*/"col-4",/*Inner Txt:*/Math.round(tempF)+" F");
         make(/*Id:*/"tempCValue",/*Parent Id:*/"tempRow",/*Type:*/"div",/*class:*/"col-4",/*Inner Txt:*/Math.round(tempC)+" C");
       
     make(/*Id:*/"conditionContainer",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"container  text-center m-3",/*Inner Txt:*/"");
-      make(/*Id:*/"conditionTitle",/*Parent Id:*/"conditionContainer",/*Type:*/"div",/*class:*/"row p-5 bg-success",/*Inner Txt:*/"");
+      make(/*Id:*/"conditionTitle",/*Parent Id:*/"conditionContainer",/*Type:*/"div",/*class:*/"row p-5 bg-info",/*Inner Txt:*/"");
         make(/*Id:*/"conditionTitleText",/*Parent Id:*/"conditionTitle",/*Type:*/"div",/*class:*/"col-12 ",/*Inner Txt:*/"Condition Outide:");
-      make(/*Id:*/"conditionContent",/*Parent Id:*/"conditionContainer",/*Type:*/"div",/*class:*/"row p-5 bg-danger",/*Inner Txt:*/"");
+      make(/*Id:*/"conditionContent",/*Parent Id:*/"conditionContainer",/*Type:*/"div",/*class:*/"row p-5 bg-dark",/*Inner Txt:*/"");
         make(/*Id:*/"conditionText",/*Parent Id:*/"conditionContent",/*Type:*/"div",/*class:*/"col-12",/*Inner Txt:*/state.city.weather[0].description);
     
     make(/*Id:*/"imgContainer",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"container h-10",/*Inner Txt:*/"");
