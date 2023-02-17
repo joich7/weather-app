@@ -27,16 +27,19 @@ function getData() {
  
   axios.get('/weather', options)
     .then(function (response) {
+
+      selector("dataContainer").innerHTML = "";
       console.log(response);
       state.city = response.data;
       console.log("success");
-     
+      weather()
       
   
     })
     .catch(function (error) {
       console.log(error);
       console.log("it failed");
+      alert("area code invalid")
     })
     .then(function () {
       // always executed
@@ -74,21 +77,31 @@ return document.getElementById(ElementId)
         selector("button").addEventListener('click', getData); 
 
       make(/*Id:*/"zipBox",/*Parent Id:*/"inputsContainer",/*Type:*/"input",/*class:*/"button",/*Inner Txt:*/"");
+      make(/*Id:*/"dataContainer",/*Parent Id:*/"main",/*Type:*/"div",/*class:*/"container bg-danger",/*Inner Txt:*/"");
  }
 
 function weather() {
+  //const tempK = state.city.main.temp;
+  //const tempF =(tempK - 273.15) * 9/5 + 32 ;
   const tempK = state.city.main.temp;
-  const tempF =(tempK - 273.15) * 9/5 + 32 ;
-  make(/*Id:*/"dataContainer",/*Parent Id:*/"main",/*Type:*/"div",/*class:*/"container",/*Inner Txt:*/"");
-     make(/*Id:*/"cityContainer",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"",/*Inner Txt:*/"");
-    
-      make(/*Id:*/"temperatureContainer",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"",/*Inner Txt:*/"");
-    
-      make(/*Id:*/"tempContainer",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"",/*Inner Txt:*/"");
-    
-      make(/*Id:*/"conditionCont",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"",/*Inner Txt:*/"");
-}
+  const tempC = tempK - 273.15;
+  const tempF = tempC*(9/5)+32;
+  
+    make(/*Id:*/"cityCont",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"container",/*Inner Txt:*/"");
+      make("cityName", "cityCont", "div", "row", "City")
+      make("cityName", "cityCont", "div", "row", state.city.name)
 
+    make(/*Id:*/"tempCont",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"container",/*Inner Txt:*/"");
+      make(/*Id:*/"tempHeader",/*Parent Id:*/"tempCont",/*Type:*/"div",/*class:*/"row",/*Inner Txt:*/"Temperature");
+      make(/*Id:*/"tempRow",/*Parent Id:*/"tempCont",/*Type:*/"div",/*class:*/"row",/*Inner Txt:*/"");
+        make(/*Id:*/"tempKValue",/*Parent Id:*/"tempRow",/*Type:*/"div",/*class:*/"col-4",/*Inner Txt:*/Math.floor(tempK)+" K");
+        make(/*Id:*/"tempFValue",/*Parent Id:*/"tempRow",/*Type:*/"div",/*class:*/"col-4",/*Inner Txt:*/Math.floor(tempF)+" F");
+        make(/*Id:*/"tempCValue",/*Parent Id:*/"tempRow",/*Type:*/"div",/*class:*/"col-4",/*Inner Txt:*/Math.floor(tempC)+" C");
+      
+    
+      make(/*Id:*/"conditionCont",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"col-4",/*Inner Txt:*/"");
+}
+ 
  init()
 
  
