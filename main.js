@@ -40,7 +40,6 @@ function getData() {
     });
 };
 
-
 const main = document.querySelector(".main");
 
 function selector(ElementId){
@@ -72,16 +71,12 @@ function init() {
   make(/*Id:*/"dataContainer",/*Parent Id:*/"main",/*Type:*/"div",/*class:*/"container text-white",/*Inner Txt:*/"");
  }
 
-
-
 //make function 
 function weather() {
   const tempK = state.city.main.temp;
   const tempC = tempK - 273.15;
   const tempF = tempC*(9/5)+32;
- 
-  
-  
+
     make(/*Id:*/"cityCont",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"container m-3",/*Inner Txt:*/"")
       make(/*Id:*/"cityRow1", /*Parent Id:*/"cityCont",/*Type:*/ "div",/*class:*/"row text-center", "")
         make(/*Id:*/"cityName", /*Parent Id:*/"cityRow1", /*Type:*/"div",/*class:*/"col-12 bg-success","City:")
@@ -106,35 +101,8 @@ function weather() {
       make(/*Id:*/"imgContTitle",/*Parent Id:*/"imgContainer",/*Type:*/"div",/*class:*/"row",/*Inner Txt:*/"");
         make(/*Id:*/"imgTitle",/*Parent Id:*/"imgContTitle",/*Type:*/"div",/*class:*/"col-4",/*Inner Txt:*/"Other Info.");
       make(/*Id:*/"imgSrcContainer",/*Parent Id:*/"imgContainer",/*Type:*/"div",/*class:*/"row",/*Inner Txt:*/"");
-        make(/*Id:*/"imageSrc",/*Parent Id:*/"imgSrcContainer",/*Type:*/"img",/*class:*/"",/*Inner Txt:*/"");
-          selector("imageSrc").setAttribute("src", state.city.weather[0].icon);
+        make(/*Id:*/"imageSrc",/*Parent Id:*/"imgSrcContainer",/*Type:*/"img",/*class:*/"h-3",/*Inner Txt:*/"");
+          selector("imageSrc").setAttribute("src", `http://openweathermap.org/img/wn/${state.city.weather[0].icon}@2x.png` );
 }
- 
 
 init()
- 
-
-
-
- 
- 
-
-
-
-
-
-
-//function init() { 
-//    const box = document.createElement("div");
-//    box.classList.add('button','container');
-//  
-//    main.appendChild(box)
-//
-//
-//    const button = document.createElement("button");
-//    button.classList.add("btn");
-//    button.innerHTML = "button";
-//    box.appendChild(button)
-//    button.addEventListener('click', () => {changeState()})
-//}
-//
