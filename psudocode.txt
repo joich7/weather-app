@@ -1,6 +1,6 @@
 
-<container>
+<main>
     <row>
         <column>
     </row>
-</container>
+</main>

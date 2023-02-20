@@ -25,8 +25,6 @@ function getData() {
       state.city = response.data;
       console.log("success");
       weather()
-      
-  
     })
     .catch(function (error) {
       console.log(error);
@@ -46,7 +44,7 @@ function selector(ElementId){
 return document.getElementById(ElementId)
  }
 
-function make(IdName, Location, elementType, className, content)  {     
+function make(IdName, Location, elementType, className, content)  {     //function to creat element w/ classes,id, element, and inner HTML
      const location = document.getElementById(Location);
      const newElement = document.createElement(elementType);
      newElement.setAttribute('id',IdName)
@@ -84,7 +82,7 @@ function weather() {
 
     make(/*Id:*/"tempCont",/*Parent Id:*/"dataContainer",/*Type:*/"div",/*class:*/"container text-center m-3",/*Inner Txt:*/"");
       make(/*Id:*/"tempHeader",/*Parent Id:*/"tempCont",/*Type:*/"div",/*class:*/"row text-center bg-info",/*Inner Txt:*/"");
-        make(/*Id:*/"tempText",/*Parent Id:*/"tempHeader",/*Type:*/"div",/*class:*/"col-12 p-4",/*Inner Txt:*/"Temperature");
+        make(/*Id:*/"tempText",/*Parent Id:*/"tempHeader",/*Type:*/"div",/*class:*/"col-12 p-4",/*Inner Txt:*/"Temperature:");
      
       make(/*Id:*/"tempRow",/*Parent Id:*/"tempCont",/*Type:*/"div",/*class:*/"row p-5 bg-dark",/*Inner Txt:*/"");
         make(/*Id:*/"tempKValue",/*Parent Id:*/"tempRow",/*Type:*/"div",/*class:*/"col-4",/*Inner Txt:*/Math.round(tempK)+" K");
@@ -102,7 +100,7 @@ function weather() {
         make(/*Id:*/"imgTitle",/*Parent Id:*/"imgContTitle",/*Type:*/"div",/*class:*/"col-4",/*Inner Txt:*/"Other Info.");
       make(/*Id:*/"imgSrcContainer",/*Parent Id:*/"imgContainer",/*Type:*/"div",/*class:*/"row bg-dark",/*Inner Txt:*/"");
         make(/*Id:*/"imageSrc",/*Parent Id:*/"imgSrcContainer",/*Type:*/"img",/*class:*/"",/*Inner Txt:*/"");
-          selector("imageSrc").setAttribute("src", `http://openweathermap.org/img/wn/${state.city.weather[0].icon}@2x.png` );
+          selector("imageSrc").setAttribute("src", `http://openweathermap.org/img/wn/${state.city.weather[0].icon}@2x.png`);
 }
 
 init()
