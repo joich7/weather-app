@@ -3,7 +3,7 @@ const API_KEY = 'd4515e3fab03f81b376b0e441c2efe9c';
 
 let state = {
       city: null,
-     
+      edit: null,
       };
       
   
